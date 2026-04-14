@@ -54,3 +54,29 @@ graph TD
     class APIServer,IngestEngine,ModelTrain api;
     class Dashboard ui;
 
+```mermaid
+graph LR
+    subgraph Raw_Tables ["MIMIC-IV Tables"]
+        A[(Patients)]
+        B[(Chartevents)]
+        C[(Admissions)]
+    end
+
+    subgraph Processing ["ETL Script (Python/SQL)"]
+        D[Join on subject_id]
+        E[Hourly Resampling]
+        F[Forward Fill Imputation]
+        G[NEWS2 Score Logic]
+    end
+
+    subgraph Output ["ML Ready"]
+        H[Feature Matrix .parquet]
+        I[Target Labels .csv]
+    end
+
+    A & B & C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H & I
+
