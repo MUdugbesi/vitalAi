@@ -1,5 +1,6 @@
 # vitalAi
-```graph TD
+```mermaid
+graph TD
     %% -- Data Sources & Ingestion --
     subgraph Data_Source ["1. Data Layer (MIMIC-IV)"]
         RawData[(MIMIC-IV <br/> GCS/Local)]
@@ -52,4 +53,4 @@
     class RawData,DemoData,TimeSeriesDB,ModelReg db;
     class APIServer,IngestEngine,ModelTrain api;
     class Dashboard ui;
-```
+
