@@ -53,7 +53,7 @@ graph TD
     class RawData,DemoData,TimeSeriesDB,ModelReg db;
     class APIServer,IngestEngine,ModelTrain api;
     class Dashboard ui;
-
+```
 ```mermaid
 graph LR
     subgraph Raw_Tables ["MIMIC-IV Tables"]
